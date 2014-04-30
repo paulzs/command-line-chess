@@ -1,17 +1,15 @@
 [Chess] (http://github.com/paulzs/command-line-chess)
 =====================================================
-A game of chess created for the Spring 2013 iteration of CS213 Software Methodology @Rutgers
-----------------------------------------------------------------------------------------------------------
 
 ### Overview
-A two-player version of Chess for the command line written in Java.
+A two-player version of Chess for the command line written in Java. Completed as part of the CS213 Software Methodology course @Rutgers
 
 ### Features
 A gameboard will be drawn at startup and for each turn of the game. 
 
-![Chess Welcome](chess2.png)
+![Chess Welcome](http://github.com/paulzs/command-line-chess/blob/master/Chess2.png)
 
-![Chess Turn](chess1.png)
+![Chess Turn](http://github.com/paulzs/command-line-chess/blob/master/Chess1.png)
 
 The player enters the move they wish to make in the "FileRank FileRank" format eg. "e2 e4" and <ENTER> to execute their move.
 
@@ -24,7 +22,8 @@ A usage menu is available by entering "-h" <ENTER>
 2) Compile the Chess program in the directory where it is downloaded using:
 
 ```bash
-javac src/*.java
+cd src
+javac *.java
 ```
 
 3) Launch the Chess program using:
