@@ -7,9 +7,9 @@ A two-player version of Chess for the command line written in Java. Completed as
 ### Features
 A gameboard will be drawn at startup and for each turn of the game. 
 
-![Chess Welcome](http://github.com/paulzs/command-line-chess/blob/master/Chess2.png)
+![Chess Welcome](http://raw.githubusercontent.com/paulzs/command-line-chess/master/Chess2.png)
 
-![Chess Turn](http://github.com/paulzs/command-line-chess/blob/master/Chess1.png)
+![Chess Turn](http://raw.githubusercontent.com/paulzs/command-line-chess/master/Chess1.png)
 
 The player enters the move they wish to make in the "FileRank FileRank" format eg. "e2 e4" and <ENTER> to execute their move.
 
