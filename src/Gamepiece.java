@@ -759,6 +759,7 @@ public class Gamepiece{
 			String tempMove = "";
 			
 			//Combine the previously programmed move search for Bishop and Rook
+			//Can be implemented as separate class
 			
 			if(this.getPlayer().equalsIgnoreCase("w")){
 				for(int i = pieceI + 1;i < 8;i++){
