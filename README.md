@@ -2,7 +2,7 @@
 =====================================================
 
 ### Overview
-A two-player version of Chess for the command line written in Java. Completed as part of the CS213 Software Methodology course @Rutgers
+A two-player version of Chess for the command line written in Java.
 
 ### Features
 A gameboard will be drawn at startup and for each turn of the game. 
