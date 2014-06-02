@@ -238,7 +238,7 @@ public class Controller{
 	}
 	
 	//Gatekeeper method to test if entered move is valid
-	public static boolean isValidMove(String fromPos, String toPos,Board gameBoard , boolean isWhiteTurn){
+	public static boolean isValidMove(String fromPos, String toPos, Board gameBoard, boolean isWhiteTurn){
 		
 		if((fromPos.length() != 2) || (toPos.length() != 2)){
 			System.out.println("Invalid move entry format. Please try again.");
@@ -307,7 +307,7 @@ public class Controller{
 	}
 	
 	//Method to actually make the move on the gameboard
-	public static Board processMove(String fromPos, String toPos,Board gameBoard , boolean isWhiteTurn){
+	public static Board processMove(String fromPos, String toPos, Board gameBoard, boolean isWhiteTurn){
 		Board newBoard = new Board();
 		newBoard = gameBoard;
 		
@@ -943,7 +943,7 @@ public class Controller{
 	}
 	
 	//Method to make special pawn promotion move
-	public static Board processPromo(String fromPos, String toPos,Board gameBoard , boolean isWhiteTurn, String promo){
+	public static Board processPromo(String fromPos, String toPos, Board gameBoard, boolean isWhiteTurn, String promo){
 		Board newBoard = new Board();
 		newBoard = gameBoard;
 		int fromI = Controller.rankToInd(fromPos);
@@ -1070,4 +1070,35 @@ public class Controller{
 			}
 		}
 	}
+
+	public static void getRecommendation(Board gameBoard, boolean isWhite){
+
+		ArrayList<Gamepiece> allPieces = new ArrayList<Gamepiece>();
+
+		for(int i = 7; i>=0; i--){
+			for(int j = 0; j<8; j++){
+				if(gameBoard.GBoard[i][j] == null){
+					continue;
+				}
+				else{
+					if(gameBoard.GBoard[i][j].getPlayer().equalsIgnoreCase("w")){
+						allPieces.add(gameBoard.GBoard[i][j]);
+					}
+				}
+			}
+		}
+
+		for(Gamepiece i: allPieces){
+			System.out.println(i.getMoves());
+		}
+
+		/*for(int i =0; i < gameBoard.whitePieceList.size(); i++){
+			System.out.println("All legal moves for " + gameBoard.whitePieceList.get(i).getPiece() + "/n");
+			for(int j=0; j < gameBoard.whitePieceList.get(i).moves.size(); j++){
+				System.out.println(gameBoard.whitePieceList.get(i).moves.get(j));
+			}
+		}*/
+
+	}
+
 }
