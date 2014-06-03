@@ -1092,13 +1092,75 @@ public class Controller{
 			System.out.println(i.getMoves());
 		}
 
-		/*for(int i =0; i < gameBoard.whitePieceList.size(); i++){
-			System.out.println("All legal moves for " + gameBoard.whitePieceList.get(i).getPiece() + "/n");
-			for(int j=0; j < gameBoard.whitePieceList.get(i).moves.size(); j++){
-				System.out.println(gameBoard.whitePieceList.get(i).moves.get(j));
-			}
-		}*/
+	}
 
+	public static void randomMove(Board gameBoard, boolean playerIsWhite){
+		if(playerIsWhite){
+			ArrayList<Gamepiece> allPieces = new ArrayList<Gamepiece>();
+
+			for(int i = 7; i>=0; i--){
+				for(int j = 0; j<8; j++){
+					if(gameBoard.GBoard[i][j] == null){
+						continue;
+					}
+					else{
+						if(gameBoard.GBoard[i][j].getPlayer().equalsIgnoreCase("b")){
+							allPieces.add(gameBoard.GBoard[i][j]);
+						}
+					}
+				}
+			}
+
+			for(Gamepiece i: allPieces){
+				double temp = Math.random();
+				if(temp >= 0.5){
+					if(!i.moves.isEmpty()){
+						processMove(i.getPosition,i.moves(0),gameBoard,false);
+					}
+					else{
+						continue;
+					}
+					
+				}
+				else{
+					continue;
+				}
+			}
+		}
+		else{
+
+			ArrayList<Gamepiece> allPieces = new ArrayList<Gamepiece>();
+
+			for(int i = 7; i>=0; i--){
+				for(int j = 0; j<8; j++){
+					if(gameBoard.GBoard[i][j] == null){
+						continue;
+					}
+					else{
+						if(gameBoard.GBoard[i][j].getPlayer().equalsIgnoreCase("w")){
+							allPieces.add(gameBoard.GBoard[i][j]);
+						}
+					}
+				}
+			}
+
+			for(Gamepiece i: allPieces){
+				double temp = Math.random();
+				if(temp >= 0.5){
+					if(!i.moves.isEmpty()){
+						processMove(i.getPosition,i.moves(0),gameBoard,true);
+					}
+					else{
+						continue;
+					}
+					
+				}
+				else{
+					continue;
+				}
+			}
+
+		}
 	}
 
 }
