@@ -99,6 +99,7 @@ public class Chess{
 			
 			if(whiteTurn){
 				System.out.println("White's turn, please enter move: ");
+				Controller.getRecommendation(Chessboard,whiteTurn);
 			}
 			else{
 				System.out.println("Black's turn, please enter move: ");
